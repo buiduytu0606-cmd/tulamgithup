@@ -364,66 +364,95 @@ nav a {
 
 
 /* responsive */
+
+/* Tablet (Màn hình dưới 1024px) */
 @media (max-width:1024px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .feat-grid {
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Tablet nhỏ / Màn hình ngang (Màn hình dưới 800px) */
 @media (max-width:800px) {
     .about {
         flex-direction: column;
-        text-align: center
+        text-align: center;
     }
 
     .about img {
         width: 100%;
-        max-width: 420px
+        max-width: 420px;
     }
 
     .hero h1 {
-        font-size: 28px
+        font-size: 28px;
     }
 
     .feat-grid {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .grid {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr);
     }
 
     nav ul {
-        display: none
+        display: none; /* Ẩn menu ngang */
     }
 
     .topbar {
-        gap: 10px
+        gap: 10px;
     }
 }
 
+/* Điện thoại di động (Màn hình dưới 480px) */
 @media (max-width:480px) {
     .hero {
-        min-height: 260px
+        min-height: 260px;
+        padding: 40px 15px; /* Thêm khoảng cách nội dung */
     }
 
-    .grid {
-        grid-template-columns: 1fr
+    /* Chuyển tất cả Grid về 1 cột để xem trên điện thoại dễ nhất */
+    .grid, .feat-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
     }
 
     .cat {
-        min-width: 170px
+        min-width: 170px;
     }
 
     .hero h1 {
-        font-size: 22px
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    /* Tối ưu hình ảnh và khoảng cách phần About */
+    .about {
+        padding: 30px 15px;
+    }
+
+    .about img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Giảm kích thước chữ tiêu đề để không bị vỡ dòng quá nhiều */
+    h2 {
+        font-size: 20px;
+    }
+
+    /* Tăng kích thước các nút bấm nếu có để dễ chạm tay */
+    .btn, button {
+        padding: 12px 20px;
+        width: 100%;
+        display: block;
     }
 }
-
 /* small helpers */
 h2.section {
     font-family: 'Playfair Display', serif;
